@@ -18,7 +18,7 @@ public class Entity {
 		return this.texture;
 	}
 	
-	public int getX(){
+	public int getX(){ // hi!!!! this is b=never gonna work!!!
 		return this.x;
 	}
 	
@@ -31,7 +31,11 @@ public class Entity {
 		this.y = newY;
 	}
 	
-	public void loadTexture(){
+	public void onCollide() {
 		
 	}
+	
+	public void loadTexture(){
+		
+	} // ever!!!!!
 }

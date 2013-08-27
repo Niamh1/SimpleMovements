@@ -41,6 +41,4 @@ public class Start {
 			Display.destroy();
 			System.exit(0);
 		}
-		
-
 }

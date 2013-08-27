@@ -8,6 +8,7 @@ import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
 public class EntityCat extends Entity{
+	private boolean talking;
 	
 	public EntityCat(int x, int y){
 		super(x,y);
@@ -22,13 +23,13 @@ public class EntityCat extends Entity{
 		}catch(IOException e){
 			
 			e.printStackTrace();
-		}
+		}//sometimes you are too optimitic :) 
 	
 	}
 	
 	
 	
-	public void render(){
+	public void render(){ 
 		
 		GL11.glClearColor(0f, 0f, 0f, 0f);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
@@ -75,5 +76,12 @@ public class EntityCat extends Entity{
 		if(y < 480 - this.getTexture().getImageHeight()){
 			setPosition(this.x, this.y + 10);
 		}
+	}
+	
+	public boolean isJackStupid(){
+		if (talking) {
+			return true;			
+		}
+		else return true;
 	}
 }
