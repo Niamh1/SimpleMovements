@@ -1,6 +1,5 @@
 package entity;
 
-
 import java.io.IOException;
 
 import org.lwjgl.opengl.GL11;
@@ -8,18 +7,14 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
-
-
-
 public class EntityCat extends Entity{
 	
 	public EntityCat(int x, int y){
 		super(x,y);
 	}
 	
-	 
+	@Override
 	public void loadTexture(){
-		
 		try {
 		
 			texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("Resources/images/Cat.png"));
@@ -81,7 +76,4 @@ public class EntityCat extends Entity{
 			setPosition(this.x, this.y + 10);
 		}
 	}
-	
-
-
 }

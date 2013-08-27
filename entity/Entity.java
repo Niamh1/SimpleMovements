@@ -34,8 +34,4 @@ public class Entity {
 	public void loadTexture(){
 		
 	}
-	
-	
-	
-	
 }
