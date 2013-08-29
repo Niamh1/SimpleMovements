@@ -9,7 +9,7 @@ import frame.InitFrame;
 public class Start {
 		
 		public static void main(String args[]){
-				
+				//Git hub test
 			InitFrame.frame(); //create frame
 			
 			EntityCat cat = new EntityCat(0,0); //create cat
