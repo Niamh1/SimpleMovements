@@ -3,9 +3,6 @@ package main;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-import world.World;
-
-import entity.Entity;
 import entity.EntityCat;
 import frame.InitFrame;
 
@@ -15,7 +12,6 @@ public class Start {
 			InitFrame.frame(); //create frame
 						
 			EntityCat cat = new EntityCat(0,0); //create cat
-			World.addToEntityList(cat);
 			cat.loadTexture();
 			cat.render();
 			
@@ -38,10 +34,17 @@ public class Start {
 				if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
 					cat.moveDown();
 				}
-				
+				if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
+					System.out.println("Cat: " + cat.getX() + " : " + cat.getY());
 				}
+			}
 			
 			Display.destroy();
 			System.exit(0);
+		}
+		
+		public static boolean checkCollisions() {
+			
+			return false;
 		}
 }

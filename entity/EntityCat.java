@@ -1,12 +1,5 @@
 package entity;
 
-import java.io.IOException;
-
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.GL11;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.opengl.TextureLoader;
-import org.newdawn.slick.util.ResourceLoader;
 
 public class EntityCat extends Entity{
 	private boolean talking;
@@ -14,50 +7,7 @@ public class EntityCat extends Entity{
 	public EntityCat(int x, int y){
 		super(x,y);
 		
-//		setTextureLocation("images/Cat.png");
-	}
-	
-	
-	
-	@Deprecated
-	public void loadTexture(){
-		try {
-			texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("images/Cat.png"));
-		}	
-		catch(IOException e){
-			e.printStackTrace();
-			Display.destroy();
-			System.exit(0);
-		}//sometimes you are too optimitic :) 
-	
-	}
-	
-	
-	@Override
-	@Deprecated
-	public void render(){ 
-		
-		GL11.glClearColor(0f, 0f, 0f, 0f);
-		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
-		
-		Color.white.bind();
-		texture.bind();
-		
-		
-		//create shape for image to sit on
-		GL11.glBegin(GL11.GL_QUADS);
-		
-		GL11.glTexCoord2f(0,0);
-		GL11.glVertex2f(x,y);
-		GL11.glTexCoord2f(1,0);
-		GL11.glVertex2f(x+texture.getTextureWidth(),y);
-		GL11.glTexCoord2f(1,1);
-		GL11.glVertex2f(x+texture.getTextureWidth(),y+texture.getTextureHeight());
-		GL11.glTexCoord2f(0,1);
-		GL11.glVertex2f(x,y+texture.getTextureHeight());
-		
-		GL11.glEnd();
-		
+		setTextureLocation("images/Cat.png");
 	}
 	
 	public void moveToLeft(){
