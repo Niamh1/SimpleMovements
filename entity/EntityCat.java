@@ -2,6 +2,7 @@ package entity;
 
 import java.io.IOException;
 
+import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.TextureLoader;
@@ -12,23 +13,28 @@ public class EntityCat extends Entity{
 	
 	public EntityCat(int x, int y){
 		super(x,y);
+		
+//		setTextureLocation("images/Cat.png");
 	}
 	
-	@Override
+	
+	
+	@Deprecated
 	public void loadTexture(){
 		try {
-		
-			texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("Resources/images/Cat.png"));
-			
-		}catch(IOException e){
-			
+			texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("images/Cat.png"));
+		}	
+		catch(IOException e){
 			e.printStackTrace();
+			Display.destroy();
+			System.exit(0);
 		}//sometimes you are too optimitic :) 
 	
 	}
 	
 	
-	
+	@Override
+	@Deprecated
 	public void render(){ 
 		
 		GL11.glClearColor(0f, 0f, 0f, 0f);

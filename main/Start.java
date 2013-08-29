@@ -3,6 +3,9 @@ package main;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+import world.World;
+
+import entity.Entity;
 import entity.EntityCat;
 import frame.InitFrame;
 
@@ -10,8 +13,9 @@ public class Start {
 		
 		public static void main(String args[]){
 			InitFrame.frame(); //create frame
-			
+						
 			EntityCat cat = new EntityCat(0,0); //create cat
+			World.addToEntityList(cat);
 			cat.loadTexture();
 			cat.render();
 			
