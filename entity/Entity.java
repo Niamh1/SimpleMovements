@@ -22,14 +22,10 @@ public abstract class Entity implements IEntityHandler {
 		this.x = x;
 		this.y = y;
 	}
-<<<<<<< HEAD
 
 	@Override
-=======
-	
+
 	//Hi Niamh
-	
->>>>>>> 9377e36886f3f8af7551ad986d091154ccd4945f
 	public Texture getTexture(){
 		return this.texture;
 	}
