@@ -7,44 +7,43 @@ import entity.EntityCat;
 import frame.InitFrame;
 
 public class Start {
+
+	public static EntityCat cat;
 		
-		public static void main(String args[]){
-			InitFrame.frame(); //create frame
-						
-			EntityCat cat = new EntityCat(0,0); //create cat
-			cat.loadTexture();
-			cat.render();
-			
-			
-			while(!Display.isCloseRequested()){ //game loop
-				
-				Display.update();
-				Display.setVSyncEnabled(true);
-				cat.render();
-				
-				if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {
-					cat.moveToLeft();
-				}
-				if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
-					cat.moveToRight();
-				}
-				if (Keyboard.isKeyDown(Keyboard.KEY_UP)) {
-					cat.moveUp();
-				}
-				if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
-					cat.moveDown();
-				}
-				if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
-					System.out.println("Cat: " + cat.getX() + " : " + cat.getY());
-				}
-			}
-			
-			Display.destroy();
-			System.exit(0);
+	public static void main(String[] args){
+		InitFrame.frame(); //create frame
+					
+		cat = new EntityCat(0,0); //create cat
+		cat.loadTexture();
+		cat.render();
+
+		Display.setVSyncEnabled(true);
+		while(!Display.isCloseRequested()){ //game loop
+			gameLoop();
 		}
 		
-		public static boolean checkCollisions() {
-			
-			return false;
+		Display.destroy();
+		System.exit(0);
+	}
+	
+	public static void gameLoop() {	
+		Display.update();
+		cat.render();
+		
+		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {
+			cat.moveToLeft();
 		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
+			cat.moveToRight();
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) {
+			cat.moveUp();
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
+			cat.moveDown();
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
+			System.out.println("Cat: " + cat.getX() + " : " + cat.getY());
+		}
+	}
 }

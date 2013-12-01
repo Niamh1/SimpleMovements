@@ -3,13 +3,11 @@ package frame;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.*;
 
-import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
+import static org.lwjgl.opengl.GL11.GL_MODELVIEW; 
 import static org.lwjgl.opengl.GL11.GL_PROJECTION;
 import static org.lwjgl.opengl.GL11.glLoadIdentity;
 import static org.lwjgl.opengl.GL11.glMatrixMode;
 import static org.lwjgl.opengl.GL11.glOrtho;
-
-
 
 public class InitFrame {
 	
@@ -17,10 +15,10 @@ public class InitFrame {
 		//makes frame
 		try{
 			
-		Display.setDisplayMode(new DisplayMode(640, 480));
-		Display.setTitle("Movements");
-		Display.create();
-		Display.setResizable(true);
+			Display.setDisplayMode(new DisplayMode(640, 480));
+			Display.setTitle("Movements");
+			Display.create();
+			Display.setResizable(true);
 		
 		
 		}catch(LWJGLException e){
@@ -30,8 +28,6 @@ public class InitFrame {
 		
 		initGL();
 	}
-	
-	
 	
 	public static void initGL(){
 		

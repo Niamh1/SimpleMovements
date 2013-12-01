@@ -1,7 +1,6 @@
 package entity;
 
-
-public class EntityCat extends Entity{
+public class EntityCat extends Entity implements IEntityHandler {
 	private boolean talking;
 	
 	public EntityCat(int x, int y){
@@ -10,6 +9,10 @@ public class EntityCat extends Entity{
 		setTextureLocation("images/Cat.png");
 	}
 	
+//	@Override
+//	public Texture getTexture() {
+//		return 
+//	}
 	public void moveToLeft(){
 		if(x > 0){
 			setPosition(this.x - 10, this.y);
