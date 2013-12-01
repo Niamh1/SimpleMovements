@@ -24,6 +24,8 @@ public abstract class Entity {
 		
 	}
 	
+	//Hi Niamh
+	
 	public Texture getTexture(){
 		return this.texture;
 	}
